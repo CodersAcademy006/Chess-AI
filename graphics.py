@@ -1,6 +1,13 @@
 import pygame
+import os
 from ChessPiece import *
 from Computer import get_random_move, get_ai_move
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+# Ensure assets exist before loading
+if not os.path.exists('assets/JohnPablok Cburnett Chess set/128px/square brown dark_png_shadow_128px.png'):
+    raise FileNotFoundError("The required asset file 'square brown dark_png_shadow_128px.png' is missing.")
 
 dark_block = pygame.image.load('assets/JohnPablok Cburnett Chess set/128px/square brown dark_png_shadow_128px.png')
 light_block = pygame.image.load('assets/JohnPablok Cburnett Chess set/128px/square brown light_png_shadow_128px.png')
